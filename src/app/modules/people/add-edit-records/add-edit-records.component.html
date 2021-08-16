@@ -1,0 +1,27 @@
+
+<mat-dialog-content>
+  <h2 mat-dialog-title>Cadastro de cleintes</h2>
+  <form [formGroup]="registerForm" class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{eDisplayColumnNames.NAME}}</mat-label>
+      <input matInput placeholder="{{eDisplayColumnNames.NAME}}" id="name" type="text" formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{eDisplayColumnNames.EMAIL_ADDRESS}}</mat-label>
+      <input matInput placeholder="{{eDisplayColumnNames.EMAIL_ADDRESS}}" id="email" type="text" formControlName="email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{eDisplayColumnNames.NAME}}</mat-label>
+      <input matInput placeholder="{{eDisplayColumnNames.PHONE_NUMBER}}" id="phone" type="text" formControlName="phone">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{eDisplayColumnNames.NAME}}</mat-label>
+      <input matInput placeholder="{{eDisplayColumnNames.BIRTH_DATE}}" id="birth_at" type="text" formControlName="birth_at">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button  mat-raised-button color="warn" (click)="onCloseDialog()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onClickBtnSave()">Update Profile</button>
+</mat-dialog-actions>
+

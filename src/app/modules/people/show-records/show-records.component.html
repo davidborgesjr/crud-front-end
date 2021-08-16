@@ -1,0 +1,50 @@
+<header>
+  <h1>
+    Clientes
+  </h1>
+</header>
+<main>
+    <mat-progress-spinner *ngIf="isLoading"
+                          class="main-spinner"
+                          [color]="color"
+                          [mode]="mode"
+                          [value]="value">
+    </mat-progress-spinner>
+      <div class="content" *ngIf="!isLoading">
+          <button mat-raised-button color="primary" class="content_btn_add" (click)="onClickBtnAddRecord()">Adicionar cadastro</button>
+          <table mat-table [dataSource]="dataSource$" class="content_table">
+            <ng-container matColumnDef="{{eColumnNames.NAME}}">
+              <th mat-header-cell *matHeaderCellDef>{{eDisplayColumnNames.NAME}}</th>
+              <td mat-cell *matCellDef="let element"> {{element[eColumnNames.NAME]}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="{{eColumnNames.EMAIL_ADDRESS}}">
+              <th mat-header-cell *matHeaderCellDef>{{eDisplayColumnNames.EMAIL_ADDRESS}}</th>
+              <td mat-cell *matCellDef="let element"> {{element[eColumnNames.EMAIL_ADDRESS]}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="{{eColumnNames.PHONE_NUMBER}}">
+              <th mat-header-cell *matHeaderCellDef>{{eDisplayColumnNames.PHONE_NUMBER}}</th>
+              <td mat-cell *matCellDef="let element"> {{element[eColumnNames.PHONE_NUMBER]}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="{{eColumnNames.BIRTH_DATE}}">
+              <th mat-header-cell *matHeaderCellDef>{{eDisplayColumnNames.BIRTH_DATE}}</th>
+              <td mat-cell *matCellDef="let element"> {{element[eColumnNames.BIRTH_DATE]}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="{{eColumnNames.ID}}">
+              <th mat-header-cell *matHeaderCellDef>{{eDisplayColumnNames.EDIT}}</th>
+              <td mat-cell *matCellDef="let element">
+                <div class="d-flex justify-content-center">
+                  <mat-icon class="content_table_icon" (click)="onClickEditIcon(element)">edit</mat-icon>
+                  <mat-icon class="content_table_icon" (click)="onClickDeleteIcon(element[eColumnNames.ID])">delete</mat-icon>
+                </div>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnNames;"></tr>
+          </table>
+      </div>
+</main>

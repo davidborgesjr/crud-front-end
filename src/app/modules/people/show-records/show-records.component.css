@@ -1,0 +1,26 @@
+
+h1 {
+  text-align: center;
+}
+
+.content {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.content_btn_add {
+  float: right;
+}
+
+.content_table {
+  width: 100%;
+}
+
+.content_table_icon {
+  width: 50px;
+  cursor: pointer;
+}
+
+.main-spinner {
+  margin: 0 10px;
+}
